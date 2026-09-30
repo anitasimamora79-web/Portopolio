@@ -3,123 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Template Portfolio">
-    <title>Anita Luna Ria - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Portofolio — Anita Luna Ria</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Navbar -->
-        <nav>
-            <div class="logo">Anita Luna Ria</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
 
-        <!-- 1. Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>Halo, Anita <br><span style="color: var(--accent-color);">Anita Luna Ria Br Simamora</span></h1>
-                <h2>Pelajar | Siswa Pengembang Web</h2>
-                <a href="#" class="btn btn-primary">Download CV</a>
-            </div>
-            <div class="hero-image">
-                <!-- Tempat siswa memasukkan tag <img> nantinya -->
-                <div class="image-placeholder">
-                    <img src="https://i.pinimg.com/736x/d9/a5/5e/d9a55eaff4b74275f63af9a902487dc9.jpg" alt="" srcset="">
+    <!-- Kumpulan ikon (dipakai lewat <use>) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 7L2 7"/></symbol>
+        <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+        <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+        <symbol id="i-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3M12 8v3M17 8v3"/><path d="M7 4h.01M12 4h.01M17 4h.01"/></symbol>
+        <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    </svg>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav>
+        <a href="#home" class="logo">Anita Luna Ria</a>
+
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About me</a>
+        </div>
+
+        <a href="#contact" class="btn btn-primary nav-cta">Contact me</a>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero container" id="home">
+        <div class="hero-content">
+            <p class="hero-hello">Hello !</p>
+
+            <h1>
+                I’m <span class="hero-name">Anita Luna Ria,</span><br>
+                Web Designer &amp; Developer Enthusiast
+            </h1>
+
+            <h2>Deskripsi singkat tentang dirimu, keahlianmu, dan apa yang bisa kamu bantu untuk klien atau perusahaan.</h2>
+
+           <a href="cv.jpeg" download="cv.jpeg" class="btn btn-primary">
+    <svg class="icon"><use href="#i-download"/></svg>Download CV
+</a>
+        </div>
+
+        <div class="hero-image">
+            <span class="hero-plane"></span>
+            <span class="hero-badge top"></span>
+
+            <!-- Pakai foto PNG tanpa latar (transparan) supaya blob biru terlihat di belakangmu -->
+            <img src="Anita.jpeg" alt="Foto Nama Kamu">
+
+            <span class="hero-badge bottom"></span>
+
+            <svg class="hero-arrow" viewBox="0 0 64 110" aria-hidden="true">
+                <path d="M4 4 C 60 20, 66 70, 30 104"/>
+                <path d="M30 104 L 30 88 M30 104 L 46 98"/>
+            </svg>
+        </div>
+    </section>
+
+  
+
+    <!-- ========== FEATURED PROJECTS ========== -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">Portfolio</span>
+                    <h2 class="section-title">Featured <span>Projects</span></h2>
+                    <p class="section-desc">Beberapa proyek yang pernah saya kerjakan selama belajar dan mengembangkan kemampuan di bidang web development.</p>
                 </div>
+                <a href="#" class="link-arrow">Lihat Semua Project <svg class="icon"><use href="#i-arrow"/></svg></a>
             </div>
-        </section>
 
-        <!-- 2. Featured Projects -->
-        <section id="projects">
-            <h2 class="section-title">Featured <span>Projects</span></h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <h3 class="project-title">Portopolio</h3>
-                    <p class="project-desc">
-                        <strong>Masalah:</strong> Saya membutuhkan web portopolio<br>
-                        <strong>Solusi:</strong> saya membuat web portopolio pribadi saya
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">PHP</span>
+           
+           
+
+                <article class="project-card">
+                    <div class="project-thumb">
+                        <img src="port.PNG" alt="Tampilan Portfolio Website" loading="lazy" onerror="this.remove()">
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Live Demo</a>
-                        <a href="#" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">Repository</a>
+                    <div class="project-body">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-desc">Website portofolio pribadi yang menampilkan profil, project, keahlian, dan informasi kontak dengan desain modern dan responsif.</p>
+                        <div class="project-foot">
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <a href="#" class="project-go" aria-label="Buka project Portfolio Website"><svg class="icon"><use href="#i-arrow"/></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TECH STACK & SKILLS ========== -->
+    <section id="skills" class="band">
+        <div class="container skills-layout">
+            <div>
+                <span class="chip">Skills</span>
+                <h2 class="section-title">Tech Stack &amp; <span>Skills</span></h2>
+                <p class="section-desc">Teknologi dan tools yang saya gunakan untuk membangun project.</p>
+            </div>
+
+           <div class="skills-grid">
+    <div class="skill-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy">HTML</div>
+    <div class="skill-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" loading="lazy">CSS</div>
+    <div class="skill-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="" loading="lazy">PHP</div>
+    <div class="skill-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" loading="lazy">VS Code</div>
+</div>
+        </div>
+    </section>
+
+    <!-- ========== TENTANG SAYA ========== -->
+    <section id="about">
+        <div class="container about-layout">
+            <div class="about-visual">
+                <span class="handnote">Better<br>Version<br>of Me ♡</span>
+                <img src="about.jpeg" alt="Suasana meja kerja" loading="lazy" onerror="this.remove()">
+            </div>
+
+            <div class="about-text">
+                <span class="eyebrow">About me</span>
+                <h2 class="section-title">Tentang <span>Saya</span></h2>
+                <p>Ceritakan dirimu di sini: pendidikan yang sedang ditempuh, minatmu di dunia teknologi, dan hal yang ingin kamu capai ke depannya.</p>
+                <p>Tambahkan satu atau dua kalimat tentang cara kamu belajar dan bekerja.</p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <span class="info-icon"><svg class="icon"><use href="#i-cake"/></svg></span>
+                        <div><small>Usia</small><strong>17 Tahun</strong></div>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon"><svg class="icon"><use href="#i-pin"/></svg></span>
+                        <div><small>Lokasi</small><strong>Medan, Indonesia</strong></div>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+                        <div><small>Pendidikan</small><strong>SMK</strong></div>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon"><svg class="icon"><use href="#i-music"/></svg></span>
+                        <div><small>Hobi</small><strong>Mendengarkan Musik</strong></div>
                     </div>
                 </div>
-                <!-- Project 2 & 3 disembunyikan untuk ringkas, lihat kode asli -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. Tech Stack & Skills -->
-        <section id="skills">
-            <h2 class="section-title">Tech Stack & <span>Skills</span></h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Web Devolopment</h3>
-                    <ul class="skill-list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Experience & Milestones -->
-        <section id="experience">
-            <h2 class="section-title">Experience & <span>Milestones</span></h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Siswa</h3>
-                        <span class="timeline-date">SMK Swasta Mandiri | July 2024 - September 2026</span>
-                        <p>Mempelajari tentang web dan codingan</p>
-                        <ul>
-                            <li>Saya Telah membuat beberapa projek menggunakan PHP,HTML</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. About Me -->
-        <section id="about">
-            <h2 class="section-title">About <span>Me</span></h2>
-            <div class="about-content">
-                <p>
-                    Saya adalah seorang pelajar di sekolah SMK Swasta  Mandiri,saya berada di jurusan RPL (Rekayasa Perangkat Lunak) saya mempelajari tentang web dan codingan.
-                </p>
-            </div>
-        </section>
-
-        <!-- 6. Contact & Footer -->
-        <section id="contact" style="padding-bottom: 0;">
+    <!-- ========== KONTAK ========== -->
+    <section id="contact" style="padding-top:0">
+        <div class="container">
             <div class="contact">
-                <h2 class="section-title" style="margin-bottom: 1rem;">Get in <span>Touch</span></h2>
-                <form class="contact-form">
-                    <input type="text" placeholder="Nama Anda" required>
-                    <input type="email" placeholder="Email Anda" required>
-                    <textarea placeholder="Tulis pesan Anda di sini..." required></textarea>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+                <div class="contact-info">
+                    <span class="eyebrow">Get in touch</span>
+                    <h2 class="section-title">Hubungi <span>Saya</span></h2>
+                    <p class="section-desc">Jika kamu tertarik untuk bekerja sama, ada pertanyaan, atau hanya ingin menyapa, jangan ragu menghubungi saya lewat form di samping atau media sosial yang tersedia.</p>
+
+                    <ul class="contact-list">
+                        <li><span class="info-icon"><svg class="icon"><use href="#i-mail"/></svg></span>emailkamu@gmail.com</li>
+                        <li><span class="info-icon"><svg class="icon"><use href="#i-pin"/></svg></span>Medan, Indonesia</li>
+                    </ul>
+
+                    <span class="handnote">Mari Terhubung! ♡</span>
+                </div>
+
+                <form class="contact-form" action="#" method="post">
+                    <div class="field-row">
+                        <label class="field">
+                            <svg class="icon"><use href="#i-user"/></svg>
+                            <input type="text" name="nama" placeholder="Nama Lengkap" required>
+                        </label>
+                        <label class="field">
+                            <svg class="icon"><use href="#i-mail"/></svg>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </label>
+                    </div>
+                    <label class="field textarea">
+                        <svg class="icon"><use href="#i-chat"/></svg>
+                        <textarea name="pesan" placeholder="Pesan" required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-block"><svg class="icon"><use href="#i-send"/></svg>Kirim Pesan</button>
                 </form>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <!-- ========== FOOTER ========== -->
     <footer>
-        <p>&copy; 2026 Anita. All rights reserved.</p>
+        <div class="container footer-inner">
+            <span class="footer-brand">Nama Kamu</span>
+            <span>© 2026 Nama Kamu. All rights reserved.</span>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+                <a href="#" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
